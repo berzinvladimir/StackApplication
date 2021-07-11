@@ -13,7 +13,7 @@ namespace StackApplication.Configuration
 
         public static void AddServices(this IServiceCollection services)
         {
-            services.AddScoped<IStack<NameObject>, EfStack>();
+            services.AddScoped<IStack<Employee>, EfStack>();
         }
 
     

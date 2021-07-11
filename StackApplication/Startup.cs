@@ -31,8 +31,8 @@ namespace StackApplication
         {
 
             services.AddControllers();
-            services.AddDbContext<StackContext<NameObject>>(options =>
-                options.UseInMemoryDatabase("DbDb"));
+            services.AddDbContext<StackContext<Employee>>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddServices();
             services.AddSwaggerGen(c =>
             {
@@ -55,7 +55,6 @@ namespace StackApplication
             app.UseRouting();
 
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

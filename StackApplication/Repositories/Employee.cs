@@ -3,7 +3,7 @@
 namespace StackApplication.Repositories
 
 {
-    public class NameObject
+    public class Employee
     {
         public string Name { get; set; }
     }

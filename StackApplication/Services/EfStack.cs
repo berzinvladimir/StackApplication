@@ -43,9 +43,9 @@ namespace StackApplication.Services
         }
     }
 
-    public class EfStack : EfStackBase<NameObject>
+    public class EfStack : EfStackBase<Employee>
     {
-        public EfStack(StackContext<NameObject> stackContext):base(stackContext)
+        public EfStack(StackContext<Employee> stackContext):base(stackContext)
         {
 
         }

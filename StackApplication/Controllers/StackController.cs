@@ -14,29 +14,29 @@ namespace StackApplication.Controllers
     public class StackController : ControllerBase
     {
 
-        private readonly IStack<NameObject> _stack;
+        private readonly IStack<Employee> _stack;
 
-        public StackController(IStack<NameObject> stack)
+        public StackController(IStack<Employee> stack)
         {
             _stack = stack;
         }
 
         [HttpGet]
-        public async Task<NameObject> Get()
+        public async Task<Employee> Get()
         {
             var item = await _stack.Pop();
             return item;
         }
 
         [HttpGet("Peek")]
-        public async Task<NameObject> Peek()
+        public async Task<Employee> Peek()
         {
             var item = await _stack.Peek();
             return item;
         }
 
         [HttpPut]
-        public async Task Push([FromBody] NameObject value)
+        public async Task Push([FromBody] Employee value)
         {
             await _stack.Push(value);
         }

@@ -15,7 +15,7 @@ namespace StackApplication.Repositories
         public DbSet<StackItem<T>> StackItems { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<StackItem<NameObject>>().Ignore(c => c.Value);
+            modelBuilder.Entity<StackItem<Employee>>().Ignore(c => c.Value);
         }
     }
 }
